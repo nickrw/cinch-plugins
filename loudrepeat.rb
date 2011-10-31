@@ -21,7 +21,10 @@ module NCinchPlugins
       config[:loud_users].each do |regex|
         if m.user.to_s =~ regex
 	  unless relaychan.has_user?(m.user)
-            relaychan.send("<" + m.user.to_s + "> \u0002" + m.message.upcase + "!")
+	    raaaaah = m.message.upcase
+	    raaaaah.sub!(/\.$/,'')
+	    raaaaah = "<#{m.user.to_s}>\u0002 #{raaaaah}!"
+            relaychan.send(raaaaah)
 	  else
 	    @bot.logger.debug "User #{m.user.to_s} matches the loud user list, but is present in the repeat channel #{config[:channel]}"
 	  end
