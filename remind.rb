@@ -1,6 +1,6 @@
 # WORK IN PROGRESS
 # playing with getting a siri-style 'remind me about xyz in 5 hours / at 1 o clock / etc'
-$remind_pattern = /^(!|NB: )remind (us|me|#[^ ]*) (?:about|to) (.*) (?:(in) ([0-9]+) (min(?:utes|s)?|hour(?:s)?)|(at) (.*))$/i
+$remind_pattern = /^(!|NB: )remind (us|me|#[^ ]*) (?:about|to) (.*) (?:(in) ([0-9]+) (min(?:ute(s|)|s)?|hour(?:s)?)|(at) (.*))$/i
 
 module NB
   class Remind
